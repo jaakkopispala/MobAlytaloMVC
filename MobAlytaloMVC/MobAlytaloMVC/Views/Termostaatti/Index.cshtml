@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MobAlytaloMVC.Models.Termostaatti>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TermostaattiNimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TermostaattiTila)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TermostaattiNykyLampo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TermostaattiNimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TermostaattiTila)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TermostaattiNykyLampo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TermostaattiID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TermostaattiID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TermostaattiID })
+        </td>
+    </tr>
+}
+
+</table>
